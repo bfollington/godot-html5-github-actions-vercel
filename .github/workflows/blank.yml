@@ -59,4 +59,12 @@ jobs:
           vercel-project-id: ${{ secrets.PROJECT_ID}} #Required 
           working-directory: ${{ github.workspace }}/${{ steps.build.outputs.build }}
           vercel-args: '--prod' #Optional
+          
+      - uses: josephbmanley/butler-publish-itchio-action@master
+        env:
+          BUTLER_CREDENTIALS: ${{ secrets.BUTLER_CREDENTIALS }}
+          CHANNEL: web
+          ITCH_GAME: godot-html5-test
+          ITCH_USER: twopm
+          PACKAGE: ${{ github.workspace }}/${{ steps.build.outputs.build }}
 
