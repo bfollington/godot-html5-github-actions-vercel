@@ -41,6 +41,7 @@ jobs:
         id: build
         uses: josephbmanley/build-godot-action@v1.4.1
         with:
+          name: "index.html"
           preset: html5
           debugMode: "true"
           
