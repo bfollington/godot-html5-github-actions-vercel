@@ -42,4 +42,10 @@ jobs:
           name: godot-html5
           preset: html5
           debugMode: "true"
+          
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: Client - html5
+          path: ${{ github.workspace }}/${{ steps.build.outputs.build }}
 
